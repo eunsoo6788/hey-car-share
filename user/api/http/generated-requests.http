@@ -1,0 +1,16 @@
+###
+POST http://localhost:10500/users
+Content-Type: application/json
+
+{
+  "username": "test",
+  "password": "123123",
+  "email": "test@gamil.com",
+  "phone": "123",
+  "type": "SELLER"
+}
+
+<> 2025-08-12T212640.500.json
+<> 2025-08-12T212638.500.json
+<> 2025-07-30T182712.500.json
+
