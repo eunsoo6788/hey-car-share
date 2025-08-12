@@ -6,7 +6,6 @@ import hey.car.user.user.entity.User;
 import hey.car.user.user.mapping.UserMapper;
 import hey.car.user.user.repository.PasswordJpaRepository;
 import hey.car.user.user.repository.UserJpaRepository;
-import kafka.producer.MessageProducer;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -28,9 +27,6 @@ public class UserService {
 
         Password password = UserMapper.INSTANCE.toEntity(request.username(), request.password());
         passwordRepository.save(password);
-
-        // 회원가입
-
 
     }
 

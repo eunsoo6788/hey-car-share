@@ -1,5 +1,6 @@
 package hey.car.user.user.entity;
 
+import hey.car.user.common.audit.BaseAuditEntity;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -11,7 +12,7 @@ import java.time.Instant;
 @Builder
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
 @AllArgsConstructor(access = AccessLevel.PUBLIC)
-public class User {
+public class User extends BaseAuditEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,9 +28,9 @@ public class User {
 
     private String phone;
 
-    private Instant createdAt;
+    private Instant registeredAt;
 
-    private Instant updatedAt;
+    private Instant profileUpdatedAt;
 
 
 }

@@ -1,4 +1,4 @@
-###
+### 회원가입
 POST http://localhost:10500/users
 Content-Type: application/json
 
@@ -9,8 +9,4 @@ Content-Type: application/json
   "phone": "123",
   "type": "SELLER"
 }
-
-<> 2025-08-12T212640.500.json
-<> 2025-08-12T212638.500.json
-<> 2025-07-30T182712.500.json
 
