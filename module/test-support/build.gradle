@@ -1,0 +1,24 @@
+plugins {
+    id 'java-library'
+}
+
+group = 'hey.used.module.test'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    toolchain { languageVersion = JavaLanguageVersion.of(21) }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    api 'com.navercorp.fixturemonkey:fixture-monkey-starter:1.1.14'
+    api 'com.navercorp.fixturemonkey:fixture-monkey-jakarta-validation:1.1.14'
+
+}
+
+tasks.test {
+    useJUnitPlatform()
+}

@@ -1,0 +1,12 @@
+### 회원가입
+POST http://localhost:10500/users
+Content-Type: application/json
+
+{
+  "username": "test",
+  "password": "123123",
+  "email": "test@gamil.com",
+  "phone": "123",
+  "type": "SELLER"
+}
+

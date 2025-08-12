@@ -1,2 +1,18 @@
 rootProject.name = 'hey-car-share'
 
+
+
+
+include('module')
+include('module:database')
+include('module:test-support')
+
+
+include('user')
+include('user:api')
+include('user:batch')
+include('user:message')
+
+
+
+

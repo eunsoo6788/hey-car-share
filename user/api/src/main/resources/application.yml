@@ -1,0 +1,18 @@
+
+
+server:
+  port: 10500
+
+spring:
+  jackson:
+    time-zone: Asia/Seoul
+  profiles:
+    active: database
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    properties:
+      hibernate.format_sql: false
+      hibernate.jdbc.time_zone: Asia/Seoul
