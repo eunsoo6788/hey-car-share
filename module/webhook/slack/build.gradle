@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+    id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'hey.car.module.slack'
+version = '0.0.1'
+
+java {
+    toolchain { languageVersion = JavaLanguageVersion.of(21) }
+}
+
+repositories { mavenCentral() }
+
+
+dependencies {
+    // Spring Boot 애노테이션/오토컨피그는 런타임을 애플리케이션이 제공하므로 compileOnly로 가볍게
+    compileOnly 'org.springframework.boot:spring-boot:3.4.3'
+    compileOnly 'org.springframework.boot:spring-boot-autoconfigure:3.4.3'
+    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor:3.4.3'
+
+
+    // Slack 공식 SDK
+    implementation 'com.slack.api:slack-api-client:1.43.0'
+
+    // Lombok
+    compileOnly 'org.projectlombok:lombok:1.18.36'
+    annotationProcessor 'org.projectlombok:lombok:1.18.36'
+    testCompileOnly 'org.projectlombok:lombok:1.18.36'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.36'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:3.4.3'
+}
