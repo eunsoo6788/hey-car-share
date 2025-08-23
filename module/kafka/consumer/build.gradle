@@ -1,0 +1,23 @@
+plugins {
+    id 'java-library'
+    id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'hey.used.module.kafka.consumer'
+version = '0.0.1'
+
+java { toolchain { languageVersion = JavaLanguageVersion.of(21) } }
+repositories { mavenCentral() }
+
+dependencyManagement {
+    imports { mavenBom "org.springframework.boot:spring-boot-dependencies:3.4.3" }
+}
+
+dependencies {
+    api 'org.springframework.kafka:spring-kafka'
+
+    // 자동구성 애노테이션만 사용(프로퍼티 바인딩 없음)
+    compileOnly 'org.springframework.boot:spring-boot-autoconfigure'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
