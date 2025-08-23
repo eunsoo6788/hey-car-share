@@ -4,6 +4,29 @@ rootProject.name = 'hey-car-share'
 
 
 include('module')
+include('module:log')
+include('module:database')
+include('module:test-support')
+include('module:kafka')
+include('module:kafka:consumer')
+include('module:kafka:producer')
+include('module:webhook')
+include('module:webhook:slack')
+
+
+include('user')
+include('user:api')
+include('user:batch')
+include('user:message-worker')
+
+
+
+
+
+
+
+
+include('module')
 include('module:database')
 include('module:test-support')
 
