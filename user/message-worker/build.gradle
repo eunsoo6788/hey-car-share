@@ -25,19 +25,20 @@ repositories {
 
 dependencies {
 
-    implementation project(':module:database')
-    implementation project(':module:kafka:producer')
+    implementation project(':module:kafka:consumer')
+    implementation(project(':user:api')) {
+        exclude group: 'org.springframework.boot', module: 'spring-boot-starter-data-jpa'
+        exclude group: 'org.springframework.boot', module: 'spring-boot-starter-jdbc'
+    }
+
+
+    implementation project(':module:webhook:slack')
     testImplementation project(':module:test-support')
+
 
     // spring
     implementation 'org.springframework.boot:spring-boot-starter-validation'
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-
-    // mapstruct
-    implementation 'org.mapstruct:mapstruct:1.5.5.Final'
-    annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.5.Final'
-    annotationProcessor 'org.projectlombok:lombok-mapstruct-binding:0.2.0'
 
     // lombok
     compileOnly 'org.projectlombok:lombok'

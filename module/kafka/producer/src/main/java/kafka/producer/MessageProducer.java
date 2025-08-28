@@ -13,10 +13,10 @@ public class MessageProducer {
     private final KafkaTemplate<String, String> kafkaTemplate;
     private final ObjectMapper objectMapper;
 
-    public void send(Topic topic, Object message) {
+    public void send(String topic, Object message) {
         try {
             String json = objectMapper.writeValueAsString(message);
-            kafkaTemplate.send(topic.name(), json);
+            kafkaTemplate.send(topic, json);
         } catch (JsonProcessingException e) {
             throw new RuntimeException("Kafka 메시지 직렬화 실패", e);
         }
